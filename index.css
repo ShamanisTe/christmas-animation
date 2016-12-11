@@ -1,0 +1,307 @@
+@font-face {
+    font-family: christmasFont;
+    font-weight: bold;
+    font-style: normal;
+    src: url('./fonts/MountainsofChristmas-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: christmasFont;
+    font-weight: normal;
+    font-style: normal;
+    src: url('./fonts/MountainsofChristmas-Regular.ttf') format('truetype');
+}
+*{
+    box-sizing: border-box;
+}
+.bg-red{
+    background:#951F2B;
+}
+.bg-ball-1{
+    background:khaki;
+}
+.bg-ball-2{
+    background:purple;
+}
+.bg-ball-3{
+    background:lightcoral;
+}
+.snow{
+    position: absolute;
+    z-index: 2;
+}
+
+.christmasContainer{
+    position:relative;
+    /*border:2px solid white;*/
+    z-index: 1;
+}
+.christmasText{
+    position:relative;
+    font-family: christmasFont, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 400%;
+    color:#A5A36C;  
+    text-align: center;
+    z-index: 1;
+    min-height: 300px;
+    min-width:300px;
+    box-shadow: #951F2B 0px 0px 4px 3px;
+}
+
+.christmasContainer img{
+    position: absolute;
+    z-index: 0;
+    transform-origin: center;
+    animation-iteration-count: 1;
+    top:0;
+}
+.droid{
+ /*   animation: droid-top 10s;*/
+}
+.apple{
+    /*animation: apple-top-right-corner 10s;*/
+}
+/***************************************/
+
+/** DROID **/
+@keyframes droid-top-right-corner{
+    0%{
+        top:35px;right:0px;
+    }
+    20%{
+        transform:translateX(75px) rotate(30deg);
+    }
+    50%{
+        transform:translateX(0px) rotate(0deg);
+    }
+    65%{
+        transform:translateX(0px) rotate(0deg);
+    }
+    75%{
+        transform:translateX(100px) rotate(45deg);
+    }
+    90%{
+        transform:translateX(100px) rotate(45deg);
+    }
+    100%{
+        top:35px;right:0px;
+        transform:translateX(0px) rotate(0deg);
+    }
+}
+@keyframes droid-top-left-corner{
+    0%{
+        top:35px;left:0px;
+    }
+    50%{
+        transform:translateX(-75px) rotate(-30deg);
+    }
+    70%{
+        transform:translateX(0px) rotate(0deg);
+    }
+    90%{
+        transform:translateX(-100px) rotate(-45deg);
+    }
+    100%{
+        top:35px;left:0px;
+        transform:translateX(0px) rotate(0deg);
+    }
+}
+@keyframes droid-bottom-left-corner{
+    0%{
+        top:auto;
+        bottom:35px;left:0px;
+    }
+    60%{
+        transform:translateX(-75px) rotate(-30deg);
+    }
+    70%{
+        transform:translateX(-75px) rotate(-30deg);
+    }
+    100%{
+        top:auto;
+        bottom:35px;left:0px;
+        transform:translateX(0px) rotate(0deg);
+    }
+}
+@keyframes droid-bottom{
+    0%{
+        top:auto;
+        bottom:0;left:40%;
+        transform:translateY(0px) rotate(140deg);
+    }
+    45%{
+        transform:translateY(135px) rotate(180deg);
+    }
+    55%{
+        transform:translateY(135px) rotate(180deg);
+    }
+    100%{
+        top:auto;
+        bottom:0;left:40%;
+        transform:translateY(0px) rotate(220deg);
+    }
+}
+@keyframes droid-top{
+    0%{
+        top:0;right:40%;
+        transform:translateY(0px) rotate(0deg);
+    }
+    40%{
+        transform:translateY(-50px);
+    }
+    55%{
+        transform:translateY(-50px);
+    }
+    60%{
+        transform:translateY(-135px);
+    }
+    63%{ transform:translateY(-135px) rotate(-5deg); }
+    66%{ transform:translateY(-135px) rotate(5deg); }
+    69%{ transform:translateY(-135px) rotate(-5deg); }
+    72%{ transform:translateY(-135px) rotate(5deg); }
+    75%{ transform:translateY(-135px) rotate(-5deg); }
+    78%{ transform:translateY(-135px) rotate(5deg); }
+    81%{ transform:translateY(-135px) rotate(-5deg); }
+    84%{ transform:translateY(-135px) rotate(5deg); }
+    87%{ transform:translateY(-135px) rotate(-5deg); }
+    90%{ transform:translateY(-135px) rotate(5deg); }
+    93%{ transform:translateY(-135px) rotate(0deg); }
+    100%{ 
+        top:0;right:40%;
+        transform:translateY(0px) rotate(0deg);
+    }
+}
+/** APPLE **/
+@keyframes apple-bottom-left-corner{
+    0%{
+        top:auto;
+        bottom:45px;left:0px;
+    }
+    50%{
+        transform:translateX(-75px) rotate(-30deg);
+    }
+    70%{
+        transform:translateX(-135px) rotate(-30deg);
+    }
+    100%{
+        top:auto;
+        bottom:45px;left:0px;
+        transform:translateX(0px) rotate(0deg);
+    }
+}
+
+
+@keyframes apple-top-right-corner{
+    0%{
+        top:45px;right:0px;
+    }
+    50%{
+        transform:translateX(75px) rotate(30deg);
+    }
+    70%{
+        transform:translateX(75px) rotate(30deg);
+    }
+    100%{
+        top:45px;right:0px;
+        transform:translateX(0px) rotate(0deg);
+    }
+}
+/***************************************/
+
+/** Utils **/
+.flex{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+.jc-c{
+    justify-content: center;
+}
+.ai-c{
+    -ms-align-items: center;
+    align-items: center;
+}
+.fd-c{
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+}
+
+/***** SAPIN *****/
+@keyframes rotate{
+    0%{
+        transform:rotate(-5deg);
+    }
+    50%{
+        transform:rotate(5deg);
+    }
+    100%{
+        transform:rotate(-5deg);
+    }
+}
+@keyframes small-rotate{
+    0%{
+        transform: scale(0.75) rotate(-5deg);
+    }
+    50%{
+        transform: scale(0.75) rotate(5deg);
+    }
+    100%{
+        transform: scale(0.75) rotate(-5deg);
+    }
+}
+.sapin-container{
+    position: absolute;    
+    animation: rotate 1s infinite;
+}
+.animate-delay-1{
+    animation-delay: 0.1s;
+}
+.sapin-container-left{
+    top:50px;
+    left:50px;
+}
+.sapin-container-right{
+    top:50px;
+    right:50px;
+}
+.sapin-container-small{
+    animation: small-rotate 1s infinite;
+}
+.sapin-tree{ 
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 100px 40px; 
+    border-color: transparent transparent #3f9951 transparent;
+}
+.sapin-container::before{
+    position: absolute;
+    content:'';
+    left:50%;bottom:-30px;
+    margin-left:-7.5px;
+    width:15px;height:30px;
+    background:saddlebrown;
+    border:1px solid black;    
+}
+.sapin-ball{
+    border-radius: 100%;
+    width:13px;
+    height:13px;
+    position:absolute;
+}
+.sapin-ball-1{
+    top:40%;left:30%;
+}
+.sapin-ball-2{
+    top:60%;right:20%;
+}
+.sapin-ball-3{
+    top:80%;left:35%;
+}
