@@ -24,7 +24,7 @@
             dateBeforeChristmasEl.innerHTML = "J - " + calcDateBeforeChristmas();
         } else if(diff < 0){
             var christmasTextEl = document.querySelector(".christmasText");
-            christmasTextEl.innerHTML = "Joyeuses fêtes de fin d'année et <br>Bonne année " + new Date().getFullYear() + " !";
+            christmasTextEl.innerHTML = "Joyeuses fêtes de fin d'année et <br>Bonne année " + (new Date().getFullYear() + 1)  + " !";
         } else {
             var divs = document.querySelectorAll(".christmasText .christmasDayToRemove");
             for(var i = 0, c = divs.length; i<c;i++){
