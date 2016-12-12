@@ -18,12 +18,138 @@
 }
 .bg-ball-1{
     background:khaki;
+    animation: bg-ball-1 8s infinite;
+    -webkit-animation: bg-ball-1 8s ease-in-out infinite;
+}
+@keyframes bg-ball-1{
+    0%{
+        background:khaki;
+    }
+    30%{
+        background:khaki;
+    }
+    33%{
+        background:purple;
+    }
+    60%{
+        background:purple;
+    }
+    66%{
+        background:lightcoral;
+    }
+    97%{
+        background:lightcoral;
+    }
+}
+@-webkit-keyframes bg-ball-1{
+    0%{
+        background:khaki;
+    }
+    30%{
+        background:khaki;
+    }
+    33%{
+        background:purple;
+    }
+    60%{
+        background:purple;
+    }
+    66%{
+        background:lightcoral;
+    }
+    97%{
+        background:lightcoral;
+    }
 }
 .bg-ball-2{
     background:purple;
+    animation: bg-ball-2 7s infinite;
+    -webkit-animation: bg-ball-2 7s ease-in-out infinite;; 
+}
+@keyframes bg-ball-2{
+    0%{
+        background:purple;
+    }
+    30%{
+        background:purple;
+    }
+    33%{
+        background:lightcoral;
+    }
+    60%{
+        background:lightcoral;
+    }
+    66%{
+        background:khaki;
+    }
+    97%{
+        background:khaki;
+    }
+}
+@-webkit-keyframes bg-ball-2{
+    0%{
+        background:purple;
+    }
+    30%{
+        background:purple;
+    }
+    33%{
+        background:lightcoral;
+    }
+    60%{
+        background:lightcoral;
+    }
+    66%{
+        background:khaki;
+    }
+    97%{
+        background:khaki;
+    }
 }
 .bg-ball-3{
     background:lightcoral;
+    animation: bg-ball-3 10s infinite;
+    -webkit-animation: bg-ball-3 10s ease-in-out infinite;
+}
+@keyframes bg-ball-3{
+    0%{
+        background:lightcoral;
+    }
+    30%{
+        background:lightcoral;
+    }
+    33%{
+        background:khaki;
+    }
+    60%{
+        background:khaki;
+    }
+    66%{
+        background:purple;
+    }
+    97%{
+        background:purple;
+    }
+}
+@-webkit-keyframes bg-ball-3{
+    0%{
+        background:lightcoral;
+    }
+    30%{
+        background:lightcoral;
+    }
+    33%{
+        background:khaki;
+    }
+    60%{
+        background:khaki;
+    }
+    66%{
+        background:purple;
+    }
+    97%{
+        background:purple;
+    }
 }
 .snow{
     position: absolute;
@@ -32,7 +158,6 @@
 
 .christmasContainer{
     position:relative;
-    /*border:2px solid white;*/
     z-index: 1;
 }
 .christmasText{
@@ -47,6 +172,7 @@
     min-height: 300px;
     min-width:300px;
     box-shadow: #951F2B 0px 0px 4px 3px;
+    -webkit-box-shadow: #951F2B 0px 0px 4px 3px;
 }
 
 .christmasContainer img{
@@ -54,6 +180,7 @@
     z-index: 0;
     transform-origin: center;
     animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
     top:0;
 }
 .droid{
@@ -89,6 +216,30 @@
         transform:translateX(0px) rotate(0deg);
     }
 }
+@-webkit-keyframes droid-top-right-corner{
+    0%{
+        top:35px;right:0px;
+    }
+    20%{
+        -webkit-transform:translateX(75px) rotate(30deg);
+    }
+    50%{
+        -webkit-transform:translateX(0px) rotate(0deg);
+    }
+    65%{
+        -webkit-transform:translateX(0px) rotate(0deg);
+    }
+    75%{
+        -webkit-transform:translateX(100px) rotate(45deg);
+    }
+    90%{
+        -webkit-transform:translateX(100px) rotate(45deg);
+    }
+    100%{
+        top:35px;right:0px;
+        -webkit-transform:translateX(0px) rotate(0deg);
+    }
+}
 @keyframes droid-top-left-corner{
     0%{
         top:35px;left:0px;
@@ -105,6 +256,24 @@
     100%{
         top:35px;left:0px;
         transform:translateX(0px) rotate(0deg);
+    }
+}
+@-webkit-keyframes droid-top-left-corner{
+    0%{
+        top:35px;left:0px;
+    }
+    50%{
+        -webkit-transform:translateX(-75px) rotate(-30deg);
+    }
+    70%{
+        -webkit-transform:translateX(0px) rotate(0deg);
+    }
+    90%{
+        -webkit-transform:translateX(-100px) rotate(-45deg);
+    }
+    100%{
+        top:35px;left:0px;
+        -webkit-transform:translateX(0px) rotate(0deg);
     }
 }
 @keyframes droid-bottom-left-corner{
@@ -124,6 +293,23 @@
         transform:translateX(0px) rotate(0deg);
     }
 }
+@-webkit-keyframes droid-bottom-left-corner{
+    0%{
+        top:auto;
+        bottom:35px;left:0px;
+    }
+    60%{
+        -webkit-transform:translateX(-75px) rotate(-30deg);
+    }
+    70%{
+        -webkit-transform:translateX(-75px) rotate(-30deg);
+    }
+    100%{
+        top:auto;
+        bottom:35px;left:0px;
+        -webkit-transform:translateX(0px) rotate(0deg);
+    }
+}
 @keyframes droid-bottom{
     0%{
         top:auto;
@@ -140,6 +326,24 @@
         top:auto;
         bottom:0;left:40%;
         transform:translateY(0px) rotate(220deg);
+    }
+}
+@-webkit-keyframes droid-bottom{
+    0%{
+        top:auto;
+        bottom:0;left:40%;
+        -webkit-transform:translateY(0px) rotate(140deg);
+    }
+    45%{
+        -webkit-transform:translateY(135px) rotate(180deg);
+    }
+    55%{
+        -webkit-transform:translateY(135px) rotate(180deg);
+    }
+    100%{
+        top:auto;
+        bottom:0;left:40%;
+        -webkit-transform:translateY(0px) rotate(220deg);
     }
 }
 @keyframes droid-top{
@@ -172,6 +376,36 @@
         transform:translateY(0px) rotate(0deg);
     }
 }
+@-webkit-keyframes droid-top{
+    0%{
+        top:0;right:40%;
+        -webkit-transform:translateY(0px) rotate(0deg);
+    }
+    40%{
+        -webkit-transform:translateY(-50px);
+    }
+    55%{
+        -webkit-transform:translateY(-50px);
+    }
+    60%{
+        -webkit-transform:translateY(-135px);
+    }
+    63%{ -webkit-transform:translateY(-135px) rotate(-5deg); }
+    66%{ -webkit-transform:translateY(-135px) rotate(5deg); }
+    69%{ -webkit-transform:translateY(-135px) rotate(-5deg); }
+    72%{ -webkit-transform:translateY(-135px) rotate(5deg); }
+    75%{ -webkit-transform:translateY(-135px) rotate(-5deg); }
+    78%{ -webkit-transform:translateY(-135px) rotate(5deg); }
+    81%{ -webkit-transform:translateY(-135px) rotate(-5deg); }
+    84%{ -webkit-transform:translateY(-135px) rotate(5deg); }
+    87%{ -webkit-transform:translateY(-135px) rotate(-5deg); }
+    90%{ -webkit-transform:translateY(-135px) rotate(5deg); }
+    93%{ -webkit-transform:translateY(-135px) rotate(0deg); }
+    100%{ 
+        top:0;right:40%;
+        -webkit-transform:translateY(0px) rotate(0deg);
+    }
+}
 /** APPLE **/
 @keyframes apple-bottom-left-corner{
     0%{
@@ -190,8 +424,23 @@
         transform:translateX(0px) rotate(0deg);
     }
 }
-
-
+@-webkit-keyframes apple-bottom-left-corner{
+    0%{
+        top:auto;
+        bottom:45px;left:0px;
+    }
+    50%{
+        -webkit-transform:translateX(-75px) rotate(-30deg);
+    }
+    70%{
+        -webkit-transform:translateX(-135px) rotate(-30deg);
+    }
+    100%{
+        top:auto;
+        bottom:45px;left:0px;
+        -webkit-transform:translateX(0px) rotate(0deg);
+    }
+}
 @keyframes apple-top-right-corner{
     0%{
         top:45px;right:0px;
@@ -207,6 +456,21 @@
         transform:translateX(0px) rotate(0deg);
     }
 }
+@-webkit-keyframes apple-top-right-corner{
+    0%{
+        top:45px;right:0px;
+    }
+    50%{
+        -webkit-transform:translateX(75px) rotate(30deg);
+    }
+    70%{
+        transform:translateX(75px) rotate(30deg);
+    }
+    100%{
+        top:45px;right:0px;
+        -webkit-transform:translateX(0px) rotate(0deg);
+    }
+}
 /***************************************/
 
 /** Utils **/
@@ -219,9 +483,11 @@
 }
 .jc-c{
     justify-content: center;
+    -webkit-justify-content: center;
 }
 .ai-c{
     -ms-align-items: center;
+    -webkit-align-items: center;
     align-items: center;
 }
 .fd-c{
@@ -244,6 +510,17 @@
         transform:rotate(-5deg);
     }
 }
+@-webkit-keyframes rotate{
+    0%{
+        -webkit-transform:rotate(-5deg);
+    }
+    50%{
+        -webkit-transform:rotate(5deg);
+    }
+    100%{
+        -webkit-transform:rotate(-5deg);
+    }
+}
 @keyframes small-rotate{
     0%{
         transform: scale(0.75) rotate(-5deg);
@@ -254,13 +531,27 @@
     100%{
         transform: scale(0.75) rotate(-5deg);
     }
+
+}
+@-webkit-keyframes small-rotate{
+    0%{
+        -webkit-transform: scale(0.75) rotate(-5deg);
+    }
+    50%{
+        -webkit-transform: scale(0.75) rotate(5deg);
+    }
+    100%{
+        -webkit-transform: scale(0.75) rotate(-5deg);
+    }
 }
 .sapin-container{
     position: absolute;    
     animation: rotate 1s infinite;
+    -webkit-animation: rotate 1s infinite;
 }
 .animate-delay-1{
     animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
 }
 .sapin-container-left{
     top:50px;
@@ -272,6 +563,7 @@
 }
 .sapin-container-small{
     animation: small-rotate 1s infinite;
+    -webkit-animation: small-rotate 1s infinite;
 }
 .sapin-tree{ 
     position: relative;
