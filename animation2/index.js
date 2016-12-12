@@ -35,7 +35,7 @@
         var cloudAnimate = cloud.animate([
             {transform: 'translate3d(' + props.startX + 'px, 0, 0)'},
             {transform: 'translate3d(' + props.endX + 'px, 0, 0)'}
-        ], 1 * 60 * 1000);
+        ], 2 * 60 * 1000);
         cloudAnimate.addEventListener('finish', moveCloud1);
     };
     var moveCloud2Direction = "left";
@@ -47,7 +47,7 @@
         var cloudAnimate = cloud.animate([
             {transform: 'translate3d(' + props.startX + 'px, 0, 0)'},
             {transform: 'translate3d(' + props.endX + 'px, 0, 0)'}
-        ], 5 * 60 * 1000);
+        ], 1 * 60 * 1000);
         cloudAnimate.addEventListener('finish', moveCloud2);
     };
     /**********/
