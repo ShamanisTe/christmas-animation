@@ -33,12 +33,12 @@
         
         var animationToPlayPosition = range(0, animations[logoToAnimate].length);
         var animationToPlay = animations[logoToAnimate][animationToPlayPosition];
-        var animationDuration = range(7,12);
+        var animationDuration = range(7,10);
 
         if(!logoEl.style.animation || logoEl.style.animation.indexOf(animationToPlay) === -1){
             logoEl.style.animation = animationToPlay + " " + (animationDuration + "s");
             
-            timeoutFnLogo = setTimeout(animateLogo, (range(10, 20) + animationDuration)  * 1000);
+            timeoutFnLogo = setTimeout(animateLogo, (range(15, 30) + animationDuration)  * 1000);
         } else {
             animateLogo();
         }
@@ -50,8 +50,8 @@
     w.app.animateLogo = animateLogo;
     
 
-    
     var init = function(){
+    
         w.app.WIDTH = document.body.offsetWidth;
         w.app.HEIGHT = document.body.offsetHeight;
 
@@ -68,6 +68,6 @@
         init();
     };
 
-    init();
+    document.addEventListener('deviceready', init, false);
     
 })(window);

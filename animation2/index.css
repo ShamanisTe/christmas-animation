@@ -14,11 +14,20 @@
 *{
     box-sizing: border-box;
 }
-
+html{
+    height:100%;width:100%;
+}
 body{
-    background:#131862;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,0d0f47+0,0d0f47+21,131862+60,131862+100 */
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(top,  #1e5799 0%, #0d0f47 0%, #0d0f47 10%, #131862 50%, #131862 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #1e5799 0%,#0d0f47 0%,#0d0f47 10%,#131862 50%,#131862 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #1e5799 0%,#0d0f47 0%,#0d0f47 10%,#131862 50%,#131862 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#131862',GradientType=0 ); /* IE6-9 */
     margin: 0;
     overflow: hidden;
+    position: absolute;
+    top:0px;left:0px;right:0px;bottom: 0px;
 }
 /******************/
 /****** SANTA-CLOES ******/
@@ -27,6 +36,7 @@ body{
     top:0;left:0;
     transform: translate3d(-100%,0,0);
     animation: move-santa-cloes 100s ease-in infinite;
+    animation-delay: 35s;
 }
 .santa-cloes{
     background:transparent url(./img/reindeer-pulling-sleigh-clipart.jpg) no-repeat center;
@@ -34,6 +44,7 @@ body{
     height:112px;
     background-size:auto 100%;   
     animation: rotate-santa-cloes 0.5s ease-in infinite;
+    animation-delay: 35s;
 }
 @keyframes rotate-santa-cloes{
    0%, 100% { transform: rotate(-18deg); }
@@ -89,8 +100,8 @@ body{
      z-index: 1;
      transform: translate3d(50%, 0, 0);
      -webkit-transform: translate3d(50%, 0, 0);
-     animation: move-cloud 40s ease-in;
-     -webkit-animation: move-cloud 40s ease-in;
+     animation: move-cloud 40s linear;
+     -webkit-animation: move-cloud 40s linear;
  }
  @keyframes move-cloud-1{
    0%, 100%{ transform: translate3d(20%, 0, 0); }
@@ -104,6 +115,63 @@ body{
    0%, 100%{ transform: translate3d(50%, 0, 0); }
    50%{ transform: translate3d(-50%, 0, 0); }
 }
+@-webkit-keyframes move-cloud-1{
+   0%, 100%{ -webkit-transform: translate3d(20%, 0, 0); }
+   50%{ -webkit-transform: translate3d(120%, 0, 0); }
+}
+@-webkit-keyframes move-cloud-2{
+   0%, 100%{ -webkit-transform: translate3d(70%, 0, 0); }
+   50%{ -webkit-transform: translate3d(-30%, 0, 0); }
+}
+@-webkit-keyframes move-cloud{
+   0%, 100%{ -webkit-transform: translate3d(50%, 0, 0); }
+   50%{ -webkit-transform: translate3d(-50%, 0, 0); }
+}
+/******************/
+
+/******************/
+/****** SKY *******/
+.sky{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+}
+.star{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    opacity: 0.5;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0px white;
+    -webkit-box-shadow: 0 0 5px 0px white;
+}
+.star.shine{
+    animation: star 60s ease-in infinite;
+}
+@keyframes star{
+    0%,10%,100%{
+        opacity: 0.5;
+        box-shadow: 0 0 5px 0px white;
+    }
+    5%{
+        opacity: 1;
+        box-shadow: 0 0 2px 1px white;
+    }
+}
+
+.moon{
+    background: url(./img/moon.png) no-repeat center;
+    width: 80px;
+    height: 80px;
+    background-size: auto 100%;
+    position: absolute;
+    top: 180px;
+    left: 82px;
+    z-index: 0;
+}
 /******************/
 
 /******************/
@@ -111,12 +179,12 @@ body{
 .bg-ground{
     background: transparent url(./img/ground.png) top center repeat;
     position: absolute;
-    top:0;left:0;right:0;
+    top:1px;left:0;right:0;
     height:50px;
 }
 .ground{
     position: absolute;
-    top:40%;left:0;right:0;bottom:0;
+    top:60%;left:0;right:0;bottom:0;
     z-index: 2;   
 }
 .ground > .bg-white{
@@ -146,16 +214,42 @@ body{
     left: 50%;
     margin-left: -25%;
     top: 30px;
-    width:512px;
+    width:897px;
+}
+.trees.trees-2{
+    left: 52%;
+    margin-left: -25%;
+    top: 70px;
+    width:832px;
 }
 .snowman{
     background: transparent url(./img/snowman_linux.png) no-repeat center;
     background-size:auto 100%;
-    width:100px;
-    height:100px;
+    width: 75px;
+    height: 75px;
     position: absolute;
-    left:75px;
-    top:30%;
+    left: 40px;
+    top: 0px;
+    animation:snowman 60s linear infinite;
+    transform-origin: center;
+}
+@keyframes snowman{
+    0%, 25%,100%{
+        transform:rotate(0deg) translate3d(0px, 0, 0);
+    }
+    12.5%{
+        transform:rotate(30deg) translate3d(40px, -20px, 0);
+    }
+}
+.white-tree{
+    background: transparent url(./img/white-tree-2.png) no-repeat center;
+    background-size: auto 100%;
+    width:150px;
+    height:150px;
+    position: absolute;
+    left:0;
+    top:-60px;
+    z-index:5;
 }
 
 
@@ -165,7 +259,7 @@ body{
 /***** HOUSE ******/
 .house{
     position:absolute;
-    top:35%;
+    bottom:15%;
     right:20%;
     z-index: 3;
 }
@@ -267,9 +361,9 @@ body{
     width:100px;
     height:200px;
     position:absolute;
-    bottom:50px;
-    left:650px;
-    z-index: 4;
+    bottom:25px;
+    left:350px;
+    z-index: 5;
 }
 .camp .wood{
     position: absolute;
@@ -291,15 +385,15 @@ body{
 /******************/
 /**** BUGDROID ****/
 .bugdroid{
-    z-index: 5;
+    z-index: 4;
     position: absolute;
-    bottom:35;
+    bottom:70px;
     width:125px;
     height:125px;
     background: url(./img/bugdroid-spritesheet.png) left center;
     
     animation: play 0.75s steps(4) infinite, 
-                move 20s linear infinite;
+                move 180s linear infinite;
                 
 }
 @keyframes play {
@@ -307,8 +401,8 @@ body{
 }
 @keyframes move{
    0%{ transform: translate3d(-150px, 0, 0) rotateY(0deg); }
-   25%, 30%{ transform: translate3d(500px, 0, 0) rotateY(0deg); }
-   30.1%{ transform: translate3d(500px, 0, 0) rotateY(180deg); }
-   50%, 100%{ transform: translate3d(-150px, 0, 0) rotateY(180deg); }
+   10%, 35%{ transform: translate3d(2000px, 0, 0) rotateY(0deg); }
+   35.1%{ transform: translate3d(2000px, 0, 0) rotateY(180deg); }
+   45.1%,100%{ transform: translate3d(-150px, 0, 0) rotateY(180deg); }
 }
 /******************/

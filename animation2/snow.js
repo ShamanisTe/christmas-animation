@@ -3,7 +3,7 @@
 
     var WIDTH = w.app.WIDTH || document.body.offsetWidth;
     var HEIGHT = w.app.HEIGHT || document.body.offsetHeight;
-    var MAX_SNOW = 75;
+    var MAX_SNOW = 50;
 
     var intervalFnSnow = null;
     

@@ -3,7 +3,7 @@
 
     var WIDTH = w.app.WIDTH || document.body.offsetWidth;
     var HEIGHT = w.app.HEIGHT || document.body.offsetHeight;
-    var MAX_SNOW = 125;
+    var MAX_SNOW = 100;
 
     var intervalFnSnow = null;
     
@@ -30,6 +30,7 @@
         }
         if(intervalFnSnow){
             cancelAnimationFrame(intervalFnSnow);
+            //clearTimeout(intervalFnSnow);
         }
        animateSnowingBalls();
     };
@@ -39,15 +40,19 @@
 
         ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
         ctx.beginPath();
+        var maxCircle = Math.PI * 2;
         for (var i = 0; i < MAX_SNOW; i++) {
             var p = snowingBalls[i];
             ctx.moveTo(p.x, p.y);
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
+            ctx.arc(p.x, p.y, p.r, 0, maxCircle, true);
         }
         ctx.fill();
+        ctx.closePath();
+
 
         prepareNextMoveSnowingBalls();
         intervalFnSnow = requestAnimationFrame(animateSnowingBalls);
+        //intervalFnSnow = setTimeout(animateSnowingBalls, 100);
     };
 
     var angle = 0;
