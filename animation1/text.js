@@ -8,6 +8,8 @@
 
     var ONEDAYTS = 1000 * 60 * 60 * 24;
 
+    var canvasSelector;
+
     var calcDateBeforeChristmas = function(){
         var chritmas = new Date(now.getFullYear(), CHRISTMASMONTH, CHRISTMASDAY);
         var tsdiff = chritmas - now;
@@ -16,13 +18,19 @@
         return daydiff;
     };
 
-    var initText = function(){
+    var initText = function(obj){
+        var canvasEffectFn;
         now = new Date();
         if(now.getMonth() === FRENCHKKINGCAKEMONTH){
             frenchKingCakeMessage();
+            canvasEffectFn = w.app.initConfetti;
         } else {
             christmasMessage();
-            
+            canvasEffectFn = w.app.initSnow;
+        }
+
+        if(obj && obj.canvasSelector){
+            canvasEffectFn(obj.canvasSelector);
         }
 
     };
