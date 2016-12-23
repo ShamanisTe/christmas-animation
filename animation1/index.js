@@ -13,8 +13,12 @@
         }
         debounceFn = setTimeout(function(){
             w.app.animateLogo();
-            w.app.initSnow();
-            w.app.initText();
+            
+            //w.app.initSnow(".snow");
+            //w.app.initConfetti(".snow");
+            w.app.initText({
+                canvasSelector: ".snow"
+            });
             if(intervalFnText){
                 clearInterval(intervalFnText);
             }
