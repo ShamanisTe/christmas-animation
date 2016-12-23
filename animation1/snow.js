@@ -3,16 +3,19 @@
 
     var WIDTH = w.app.WIDTH || document.body.offsetWidth;
     var HEIGHT = w.app.HEIGHT || document.body.offsetHeight;
-    var MAX_SNOW = 100;
+    var MAX_SNOW = 150;
 
     var intervalFnSnow = null;
     
-    var canvas = document.querySelector('.snow');
-    var ctx = canvas.getContext('2d');
+    var canvas;
+    var ctx;
     
     var snowingBalls = [];
 
-    var initSnow = function(){
+    var initSnow = function(canvasSelector){
+        canvas = document.querySelector(canvasSelector);
+        ctx = canvas.getContext('2d');
+
         WIDTH = w.app.WIDTH;
         HEIGHT = w.app.HEIGHT;
 
@@ -35,6 +38,7 @@
        animateSnowingBalls();
     };
 
+
     var animateSnowingBalls = function(){
         ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
@@ -44,6 +48,7 @@
         for (var i = 0; i < MAX_SNOW; i++) {
             var p = snowingBalls[i];
             ctx.moveTo(p.x, p.y);
+            
             ctx.arc(p.x, p.y, p.r, 0, maxCircle, true);
         }
         ctx.fill();
