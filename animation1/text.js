@@ -8,6 +8,8 @@
 
     var ONEDAYTS = 1000 * 60 * 60 * 24;
 
+    var newYearCounter = new Date(2017,0,0);
+
     var canvasSelector;
 
     var calcDateBeforeChristmas = function(){
@@ -48,6 +50,14 @@
         } else if(diff < 0){
             var christmasTextEl = document.querySelector(".christmasText");
             christmasTextEl.innerHTML = "Joyeuses fêtes de fin d'année et <br>Bonne année " + (now.getFullYear() + 1)  + " !";
+            
+            // todo remove counter container
+            // todo move this another place
+            // Init counter before new year to launch confetti
+            w.app.initCounter(newYearCounter, function finish(){
+                w.app.stopSnow();
+                w.app.initConfetti(".snow");
+            });
         } else {
             var divs = document.querySelectorAll(".christmasText .christmasDayToRemove");
             for(var i = 0, c = divs.length; i<c;i++){
