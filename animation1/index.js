@@ -22,7 +22,7 @@
             if(intervalFnText){
                 clearInterval(intervalFnText);
             }
-            intervalFnText = setInterval(w.app.initText, 3600 * 1000 * 2);
+            intervalFnText = setInterval(w.app.initText, 3600 * 1000 * 3);
         }, 250);
         
     };
@@ -36,5 +36,6 @@
     window.onresize = function(){
         init();
     };
+    w.app.initScene = init;
 
 })(window);
