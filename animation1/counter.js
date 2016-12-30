@@ -9,6 +9,7 @@
 
     var intervaltimediff;
     var nbnumeros = 0;
+    var intervalfn;
     // Todo calc interval, recreate scene day / min / sec
     function initCounter(dateToInit, callbackFinish){
 
@@ -33,7 +34,16 @@
         intervaltimediffStr = intervaltimediff.toString();
         nbnumeros = intervaltimediffStr.length;
 
-        var counterContainer = document.createElement('div');
+        if(intervalfn){
+            clearInterval(intervalfn);
+        }
+
+        var counterContainer = document.querySelector('.counter-container');
+        if(counterContainer){
+            counterContainer.remove();
+        }
+
+        counterContainer = document.createElement('div');
         counterContainer.classList.add('counter-container');
         var counterContainerHTML = "";
         for(var i =0; i<nbnumeros; i++){
@@ -41,8 +51,8 @@
         }
         counterContainer.innerHTML = counterContainerHTML;
         document.body.appendChild(counterContainer);
-
-        var intervalfn = setInterval(function() {
+        
+        intervalfn = setInterval(function() {
             if(intervaltimediff === 0){
                 counterContainer.remove();
                 clearInterval(intervalfn);
@@ -54,7 +64,7 @@
             if(--intervaltimediff === 0){
                 callbackFinish();
             }
-
+            
         }, INTERVALTIME);
     }
 
